@@ -1,6 +1,6 @@
 ﻿{
   "dependencies": {
-    "Zebble": "4.1.286"
+    "Zebble": "4.1.289"
   },
   "frameworks": {
     "uap10.0": {}
@@ -14,5 +14,6 @@
     "win10-x64-aot": {}
   }
 }
+
 
 
