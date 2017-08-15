@@ -37,7 +37,7 @@ namespace Zebble
                 var left = parent.ActualWidth - ActualWidth - Margin.Left() - parent.Padding.Left();
 
                 if ((parent as Stack)?.Direction == RepeatDirection.Horizontal)
-                    left -= CurrentSiblings.Except(x => x.absolute).Sum(c => c.CalculateTotalWidth());
+                    left -= CurrentSiblings.Except(x => x.Absolute).Sum(c => c.CalculateTotalWidth());
 
                 Css.Margin.Left = left.LimitMin(0);
             }
