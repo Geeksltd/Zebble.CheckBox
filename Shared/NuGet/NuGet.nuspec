@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Zebble.CheckBox</id>
-    <version>1.22.108</version>
+    <version>1.22.109</version>
     <title>Checkbox for Zebble (Xamarin)</title>
     <projectUrl>https://github.com/Geeksltd/Zebble.CheckBox</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/Geeksltd/Zebble.CheckBox/master/Shared/NuGet/Icon.png</iconUrl>
