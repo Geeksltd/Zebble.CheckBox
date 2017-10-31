@@ -6,9 +6,9 @@
     <title>Checkbox for Zebble (Xamarin)</title>
     <projectUrl>https://github.com/Geeksltd/Zebble.CheckBox</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/Geeksltd/Zebble.CheckBox/master/Shared/NuGet/Icon.png</iconUrl>
-    <copyright>Copyright ©2017 Mobile App Technologies Ltd - All rights reserved.</copyright>
+    <copyright>Copyright ©2017 Geeks Ltd - All rights reserved.</copyright>
     <description>Very simple checkbox component. It uses an image for the checked effect.  You can set the image to be different from a tick, or define the appearance of it however you need in the Styles</description>
-    <authors>Mobile App Technologies Ltd</authors>
+    <authors>Geeks Ltd</authors>
     <dependencies>
       <!-- <dependency id="Zebble....." version="..." />  -->
     </dependencies>
