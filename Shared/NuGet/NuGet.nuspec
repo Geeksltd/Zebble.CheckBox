@@ -16,6 +16,12 @@
   <files>
     <file src="..\..\lib\Zebble.CheckBox.iOS.*" target="lib\Xamarin.iOS10\" />
     <file src="..\..\lib\Zebble.CheckBox.Android.*" target="lib\MonoAndroid10\" />
-    <file src="..\..\lib\Zebble.CheckBox.UWP.*" target="lib\UAP10\" />
+
+    <file src="..\..\lib\bin\ARM\Release\Zebble.CheckBox.UWP.*" target="runtimes\win10-arm\lib\uap10.0" />
+    <file src="..\..\lib\bin\x64\Release\Zebble.CheckBox.UWP.*" target="runtimes\win10-x64\lib\uap10.0" />
+    <file src="..\..\lib\bin\x86\Release\Zebble.CheckBox.UWP.*" target="runtimes\win10-x86\lib\uap10.0" />
+
+    <file src="..\..\lib\bin\Release\Zebble.CheckBox.UWP.*" target="ref\uap10.0" />
+    
   </files>
 </package>
