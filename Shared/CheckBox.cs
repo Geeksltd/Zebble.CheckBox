@@ -4,7 +4,7 @@ namespace Zebble
     using System.Linq;
     using System.Threading.Tasks;
 
-    public class CheckBox : Stack, FormField.IControl
+    public class CheckBox : Stack, FormField.IControl, IBindableInput
     {
         bool @checked, IsToggling;
         public readonly AsyncEvent CheckedChanged = new AsyncEvent(ConcurrentEventRaisePolicy.Queue);
@@ -82,5 +82,7 @@ namespace Zebble
             CheckedChanged?.Dispose();
             base.Dispose();
         }
+
+        public void AddBinding(Bindable bindable) => CheckedChanged.Handle(() => bindable.SetUserValue(Checked));
     }
 }
