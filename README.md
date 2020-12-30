@@ -1,4 +1,4 @@
-[logo]: https://raw.githubusercontent.com/Geeksltd/Zebble.CheckBox/master/Shared/NuGet/Icon.png "Zebble.CheckBox"
+﻿[logo]: https://raw.githubusercontent.com/Geeksltd/Zebble.CheckBox/master/icon.png "Zebble.CheckBox"
 
 
 ## Zebble.CheckBox
