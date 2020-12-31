@@ -7,7 +7,7 @@
     <RootNamespace>Zebble</RootNamespace>
     <PackageId>Zebble.CheckBox</PackageId>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <Version>1.22.117.0</Version>
+    <Version>1.22.118.0</Version>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
@@ -65,8 +65,7 @@
     <None Remove="Zebble-LicenseAgreement.txt" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Zebble" Version="4.5.421" />
+    <PackageReference Include="Zebble" Version="4.5.423" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Android\" />
