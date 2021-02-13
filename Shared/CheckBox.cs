@@ -7,14 +7,14 @@ namespace Zebble
     public class CheckBox : Stack, FormField.IControl, IBindableInput
     {
         bool @checked, IsToggling;
+        event InputChanged InputChanged;
         public readonly AsyncEvent CheckedChanged = new AsyncEvent(ConcurrentEventRaisePolicy.Queue);
         public readonly ImageView CheckedImage = new ImageView().Id("CheckedImage").Hide();
         public Alignment Alignment { get; set; } = Alignment.Right;
 
-        public CheckBox()
-        {
-            CheckedChanged.Handle(UpdateCheckedState);
-        }
+        public CheckBox() => CheckedChanged.Handle(UpdateCheckedState);
+
+        event InputChanged IBindableInput.InputChanged { add => InputChanged += value; remove => InputChanged -= value; }
 
         public override async Task OnInitializing()
         {
@@ -73,6 +73,7 @@ namespace Zebble
 
         Task UpdateCheckedState()
         {
+            InputChanged?.Invoke(nameof(Checked));
             CheckedImage.Visible(Checked);
             return SetPseudoCssState("checked", Checked);
         }
@@ -82,7 +83,5 @@ namespace Zebble
             CheckedChanged?.Dispose();
             base.Dispose();
         }
-
-        public void AddBinding(Bindable bindable) => CheckedChanged.Handle(() => bindable.SetUserValue(Checked));
     }
 }
