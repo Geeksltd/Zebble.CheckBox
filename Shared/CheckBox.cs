@@ -8,18 +8,21 @@ namespace Zebble
     {
         bool @checked, IsToggling;
         event InputChanged InputChanged;
-        public readonly AsyncEvent CheckedChanged = new AsyncEvent(ConcurrentEventRaisePolicy.Queue);
+        public readonly AsyncEvent CheckedChanged = new(ConcurrentEventRaisePolicy.Queue);
         public readonly ImageView CheckedImage = new ImageView().Id("CheckedImage").Hide();
         public Alignment Alignment { get; set; } = Alignment.Right;
 
-        public CheckBox() => CheckedChanged.Handle(UpdateCheckedState);
+        public CheckBox()
+        {
+            CheckedChanged.Handle(UpdateCheckedState);
+            AutoFlash = false;
+        }
 
         event InputChanged IBindableInput.InputChanged { add => InputChanged += value; remove => InputChanged -= value; }
 
         public override async Task OnInitializing()
         {
             await base.OnInitializing();
-
             Tapped.Handle(ToggleChanged);
             Swiped.Handle(ToggleChanged);
             PanFinished.Handle(ToggleChanged);
