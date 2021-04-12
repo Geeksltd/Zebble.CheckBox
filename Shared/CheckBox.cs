@@ -23,9 +23,9 @@ namespace Zebble
         public override async Task OnInitializing()
         {
             await base.OnInitializing();
-            Tapped.Handle(ToggleChanged);
-            Swiped.Handle(ToggleChanged);
-            PanFinished.Handle(ToggleChanged);
+            Tapped.Handle(UserToggled);
+            Swiped.Handle(UserToggled);
+            PanFinished.Handle(UserToggled);
 
             await Add(CheckedImage);
         }
@@ -59,10 +59,11 @@ namespace Zebble
             }
         }
 
-        public async Task ToggleChanged()
+        public async Task UserToggled()
         {
             if (IsToggling) return;
             else IsToggling = true;
+
             try
             {
                 @checked = !@checked;
@@ -72,11 +73,12 @@ namespace Zebble
             {
                 IsToggling = false;
             }
+
+            InputChanged?.Invoke(nameof(Checked));
         }
 
         Task UpdateCheckedState()
         {
-            InputChanged?.Invoke(nameof(Checked));
             CheckedImage.Visible(Checked);
             return SetPseudoCssState("checked", Checked);
         }
